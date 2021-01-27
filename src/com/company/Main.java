@@ -3,27 +3,34 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-//        System.out.println("hello word!");
-//        int x;
-//        x = 10;
-//        if(x>5){
-//            System.out.println(x + "la so duong");
-//        }else{
-//            System.out.println(x + " <=5 ");
-//        }
-//        for(int i = 0; i<10; i++){
-//            System.out.println("i= "+i);
-//        }
+        Product sp1 = new Product();
+        sp1.id = 1;
+        sp1.name = "ip1";
+        sp1.price = 1000;
+        sp1.amount = 1;
+        sp1.unit = "pc";
+        sp1.in4_Product();
 
+        Product sp2 = new Product();
+        sp2.id = 2;
+        sp2.name = "ip2";
+        sp2.price = 2000;
+        sp2.amount = 2;
+        sp2.unit = "pc";
+        sp2.in4_Product();
 
-//        Student st ; //Khai báo 1 biến có kiểu dữ liệu Student
-//        st = new Student(); // tao doi tuong -> st sẽ có 1 ô nhớ
-//        Student st2 = new Student();
-//        st.name = "Bui Nam Son";
-//        st2.name = "Truong Quang Huy";
-//
-//        st.run();
-//        st2.run();
+        Product sp3 = new Product();
+        sp3.id = 3;
+        sp3.name = "ip3";
+        sp3.price = 3000;
+        sp3.amount = 3;
+        sp3.unit = "pc";
+        sp3.in4_Product();
+
+        if(sp1.checkStock()){
+            System.out.println("San pham "+sp1.name + " con " + sp1.amount + " sp");
+        }else{
+            System.out.println("San pham " + sp1.name + " het hang");
+        }
     }
 }
