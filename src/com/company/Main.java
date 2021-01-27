@@ -27,8 +27,11 @@ public class Main {
         sp3.unit = "pc";
         sp3.in4_Product();
 
+        sp1.changeQty(4);
+        sp1.changePrice(20);
+
         if(sp1.checkStock()){
-            System.out.println("San pham "+sp1.name + " con " + sp1.amount + " sp");
+            System.out.println("San pham "+sp1.name + " con " + sp1.amount + " sp , co gia la : " + sp1.price);
         }else{
             System.out.println("San pham " + sp1.name + " het hang");
         }
