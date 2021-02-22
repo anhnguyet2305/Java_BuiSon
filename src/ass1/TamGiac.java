@@ -1,27 +1,50 @@
 package ass1;
 
 public class TamGiac {
-    int a,b,c;
+    private float canh1;
+    private float canh2;
+    private float canh3;
 
-    void TamGiac() {
-        System.out.println("Cạnh thứ 1 : " + a);
-        System.out.println("Cạnh thứ 2 : " + b);
-        System.out.println("Cạnh thứ 3 : " + c);
+    public TamGiac() {
     }
-    boolean CheckEdge(){
-        if ((a + b > c) && (b + c > a) && (c + a > b)) return true;
+
+    public float getCanh1() {
+        return canh1;
+    }
+
+    public void setCanh1(float canh1) {
+        this.canh1 = canh1;
+    }
+
+    public float getCanh2() {
+        return canh2;
+    }
+
+    public void setCanh2(float canh2) {
+        this.canh2 = canh2;
+    }
+
+    public float getCanh3() {
+        return canh3;
+    }
+
+    public void setCanh3(float canh3) {
+        this.canh3 = canh3;
+    }
+
+    public boolean kiemTraTamGiac(){
+        if(getCanh1()+getCanh2()>getCanh3() && getCanh2()+getCanh3()>getCanh1() && getCanh1()+getCanh3()>getCanh2()){
+            return true;
+        }
         return false;
     }
-    double Chuvi(){
-        double cv=0;
-        cv = a + b + c;
-        return cv;
+
+    public float chuVi(){
+        return getCanh1()+getCanh2()+getCanh3();
     }
-    double DienTich(){
-        double s;
-        float p;
-        p = (float)(a+b+c)/2;
-        s = (float)Math.sqrt(p*(p-a)*(p-b)*(p-c));
-        return s;
+
+    public double dienTich(){
+        float p = chuVi()/2;
+        return  Math.sqrt(p*(p-getCanh1())*(p-getCanh2())*(p-getCanh3()));
     }
 }
