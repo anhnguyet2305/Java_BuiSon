@@ -1,7 +1,6 @@
 package Account;
 
 
-
 public class Account {
     int id;
     String name;
@@ -10,14 +9,11 @@ public class Account {
     public Account(){
 
     }
-    public Account(int id, String name, int balance){
-        this.id=id;
-        this.name=name;
-        this.balance = balance;
-    }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -25,11 +21,12 @@ public class Account {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public double getBalance(){
+    public int getBalance() {
         return balance;
     }
 
@@ -38,23 +35,27 @@ public class Account {
     }
 
     public void credit(int amount){
-        this.balance += amount;
+        if(amount>0){
+            setBalance(getBalance()+amount);
+            return;
+        }
+        System.out.println("Nap tien that bai");
     }
 
     public void debit(int amount){
-        if (amount > this.balance){
-            System.out.println("thanh toan thanh cong");
-        }else {
-            this.balance -= amount;
+        if(amount > this.balance){
+            System.out.println("Thanh thanh that bai");
+            return;
         }
-    }
-    public void tranferTo(Account account, int amount){
-        if (amount > this.balance){
-            System.out.println("chuyen tien k thanh cong");
-        }else {
-            this.balance -= amount;
-            account.credit(amount);
-        }
+        this.balance -= amount;
     }
 
+    public boolean transferTo(Account account,int amount){
+        if(amount >0 && amount <= getBalance()){
+            debit(amount);
+            account.credit(amount);
+            return true;
+        }
+        return false;
+    }
 }
