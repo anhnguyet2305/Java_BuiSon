@@ -4,40 +4,77 @@ import java.util.ArrayList;
 
 public class Cart {
     int id;
-    ArrayList<String> customer;
-    float grandTotal;
+    String customer;
+    double grandTotal;
     String city;
-    ArrayList<String> productList;
+    ArrayList<Product> productList;
 
-    public int getId(){
+    public Cart() {
+        productList = new ArrayList<Product>();
+    }
+
+    public int getId() {
         return id;
     }
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public float getGrandTotal(){
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public double getGrandTotal() {
         return grandTotal;
     }
-    public void setGrandTotal(float grandTotal){
+
+    public void setGrandTotal(double grandTotal) {
         this.grandTotal = grandTotal;
     }
 
-    public String getCity(){
+    public String getCity() {
         return city;
     }
-    public void setCity(String city){
-        this.city=city;
-    }
-    public Cart(){
-        customer = new ArrayList<String>();
-        productList = new ArrayList<String>();
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public void addCart(String sp){
-        productList.add(sp);
+    public ArrayList<Product> getProductList() {
+        return productList;
     }
-    public void removeCart(String sp){
-        productList.remove(sp);
+
+    public boolean addProduct(Product pd){
+        if(pd.checkQty()){
+            getProductList().add(pd);
+            pd.setQty(pd.getQty()-1);
+            setGrandTotal(getGrandTotal()+pd.getPrice());
+            return true;
+        }
+        return false;
     }
+
+    public void removeProduct(int index){
+        Product p = productList.get(index);
+        p.setQty(p.getQty()+1);
+        getProductList().remove(index);
+        setGrandTotal(getGrandTotal()-p.getPrice());
+    }
+
+    public boolean checkCity(){
+        return getCity() == "HN" || getCity() == "HCM";
+    }
+
+    public double finalGrandTotal(){
+        if(checkCity()){
+            return  getGrandTotal()+ getGrandTotal()*1/100;
+        }
+        return  getGrandTotal() +  getGrandTotal() * 2/100;
+    }
+
 }

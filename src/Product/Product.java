@@ -6,46 +6,50 @@ public class Product {
     int id;
     String productName;
     int qty;
-    float price;
-    ArrayList<String> Product;
-    public Product(){
-        Product = new ArrayList<String>();
+    double price;
+
+    public Product() {
     }
 
-    public String getProductName(){
-        return  productName;
-    }
-    public void setProductName(String productName){
-        this.productName = productName;
-    }
-
-    public int getId(){
+    public int getId() {
         return id;
     }
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getQty(int qty){
-        return qty;
-    }
-    public void setQty(int qty){
-        if(qty > 0){
-            this.qty = qty;
-        }else {
-            System.out.println("sản phẩm đã hết");
-        }
+    public String getProductName() {
+        return productName;
     }
 
-    public void getPrice(float price){
-       this.price = price;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
-    public void setPrice(float price){
-        if (price>=0){
-            this.price = price;
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean checkQty(){
+        if(qty>0){
+            System.out.println("Con hang");
+            return true;
         }
-        else {
-            System.out.println("ko set");
-        }
+        System.out.println("Het hang");
+        return false;
+
     }
 }
