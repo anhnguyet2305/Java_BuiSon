@@ -2,36 +2,28 @@ package SinhVien;
 
 public class Main {
     public static void main(String[] args) {
-        SinhVien r = new SinhVien();
-        r.setMaso(1);
-        r.setHovaten("hoàng sơn");
-        r.setDiachi("bắc giang");
-        r.setSdt(12344456);
+        SinhVien sv1 = new SinhVien();
+        sv1.setMaso(1);
+        sv1.setHovaten("hoàng sơn");
+        sv1.setDiachi("bắc giang");
+        sv1.setSdt("12344456");
 
 
-        SinhVien r1 = new SinhVien();
-        r1.setMaso(2);
-        r1.setHovaten("bùi sơn");
-        r1.setDiachi("hà nội");
-        r1.setSdt(2341678);
+        SinhVien sv2 = new SinhVien();
+        sv2.setMaso(2);
+        sv2.setHovaten("bùi sơn");
+        sv2.setDiachi("hà nội");
+        sv2.setSdt("2341678");
 
         Class lh = new Class();
-        lh.setMalop("a8");
+        lh.setMalop(8);
         lh.setTenlop("T2008M");
         lh.setPhonghoc("phong so 2");
 
-
-        lh.addSv(r);
-        lh.addSv(r);
-        lh.addSv(r);
-        lh.addSv(r1);
-        lh.addSv(r1);
-        lh.addSv(r1);
+        lh.addSv(sv1);
+        lh.addSv(sv2);
 
         System.out.println("danh sach sinh vien trong lop:");
-        for (SinhVien p : lh.getDanhsachsinhvien()) {
-            System.out.println("Mã SV:"+p.getMaso() + "\n" + "Họ và tên :"+p.getHovaten() + "\n" +"Địa Chỉ :"+ p.getDiachi() + "\n"+"Sdt:"+ p.getSdt());
-            System.out.println();
-        }
+        lh.printDS();
     }
 }

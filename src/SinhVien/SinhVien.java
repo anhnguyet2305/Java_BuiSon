@@ -3,7 +3,7 @@ package SinhVien;
 public class SinhVien {
     int Maso;
     String Hovaten;
-    int Sdt;
+    String Sdt;
     String Diachi;
 
     public SinhVien() {
@@ -15,8 +15,8 @@ public class SinhVien {
     public String getHovaten() { return Hovaten; }
     public void setHovaten(String hovaten) { Hovaten = hovaten; }
 
-    public int getSdt() { return Sdt; }
-    public void setSdt(int sdt) { Sdt = sdt; }
+    public String getSdt() { return Sdt; }
+    public void setSdt(String sdt) { Sdt = sdt; }
 
     public String getDiachi() { return Diachi; }
     public void setDiachi(String diachi) { Diachi = diachi; }

@@ -3,7 +3,7 @@ package SinhVien;
 import java.util.ArrayList;
 
 public class Class {
-    String Malop;
+    int Malop;
     String Tenlop;
     String Phonghoc;
     ArrayList<SinhVien> Danhsachsinhvien;
@@ -12,8 +12,8 @@ public class Class {
         Danhsachsinhvien = new ArrayList<SinhVien>();
     }
 
-    public String getMalop() { return Malop; }
-    public void setMalop(String malop) { Malop = malop; }
+    public int getMalop() { return Malop; }
+    public void setMalop(int malop) { Malop = malop; }
 
     public String getTenlop() { return Tenlop; }
     public void setTenlop(String tenlop) { Tenlop = tenlop; }
@@ -31,7 +31,12 @@ public class Class {
         getDanhsachsinhvien().remove(index);
     }
     public void printDS(){
-        System.out.println("danh sách sinh viên trong lớp : "+ Danhsachsinhvien);
+        for (SinhVien s:Danhsachsinhvien){
+            System.out.println("Ma SV :" + s.getMaso());
+            System.out.println("Ten : " + s.getHovaten());
+            System.out.println("sdt : " + s.getSdt());
+            System.out.println("dia chi : " + s.getDiachi());
+        }
     }
 
 }
