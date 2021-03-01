@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Student extends Person{
     public int maSv;
-    public int diemThi;
+    public float diemThi;
     public String email;
 
     public int getMaSv() {
@@ -15,11 +15,11 @@ public class Student extends Person{
         this.maSv = maSv;
     }
 
-    public int getDiemThi() {
+    public float getDiemThi() {
         return diemThi;
     }
 
-    public void setDiemThi(int diemThi) {
+    public void setDiemThi(float diemThi) {
         this.diemThi = diemThi;
     }
 
@@ -46,7 +46,7 @@ public class Student extends Person{
         System.out.println("Nhap ma sv : ");
         setMaSv(p.nextInt());
         System.out.println("Nhap diem thi : ");
-        setDiemThi(p.nextInt());
+        setDiemThi(p.nextFloat());
         System.out.println("Nhap email");
         setEmail(p.next());
     }
@@ -60,7 +60,7 @@ public class Student extends Person{
         System.out.println("dia chi : " + getAddress());
         System.out.println("ma sv : " + getMaSv());
         System.out.println("diem thi : " + getDiemThi());
-        System.out.println("email : " + getEmail() +"@gmail.com");
+        System.out.println("email : " + getEmail());
     }
 
     public void kiemTraHocBong(){
