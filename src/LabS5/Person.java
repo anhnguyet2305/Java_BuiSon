@@ -3,10 +3,20 @@ package LabS5;
 import java.util.Scanner;
 
 public class Person {
-    String name;
-    String sex;
-    String date;
-    String address;
+    public String name;
+    public String sex;
+    public String date;
+    public String address;
+
+    public Person() {
+    }
+
+    public Person(String name, String sex, String date, String address) {
+        this.name = name;
+        this.sex = sex;
+        this.date = date;
+        this.address = address;
+    }
 
     public String getName() {
         return name;
