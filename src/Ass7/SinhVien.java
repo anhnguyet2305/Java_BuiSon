@@ -1,11 +1,11 @@
 package Ass7;
 
 public class SinhVien {
-    private int id;
-    private String name;
-    private int age;
-    private String address;
-    private float gpa;
+    int id;
+    String name;
+    int age;
+    String address;
+    float gpa;
 
     public SinhVien() {
     }
