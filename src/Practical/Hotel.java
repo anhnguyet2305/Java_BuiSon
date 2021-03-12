@@ -42,6 +42,13 @@ public class Hotel {
         this.ownerName = ownerName;
     }
 
-
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", ownerName='" + ownerName + '\'' +
+                '}';
+    }
 
 }

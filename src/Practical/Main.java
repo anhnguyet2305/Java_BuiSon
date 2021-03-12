@@ -32,14 +32,14 @@ public class Main {
 
 
 
-        System.out.println("Please enter the owner name of the hotel!");
+        System.out.println("Please enter the owner name of the hotel : ");
         String ownerName = scanner.next();
-        searchByOwnerName(ownerName);
+        searchOwnerName(ownerName);
 
     }
 
-    public static void searchByOwnerName(String ownerName){
-        System.out.println("All hotels of " + ownerName + ":");
+    public static void searchOwnerName(String ownerName){
+        System.out.println("Hotels of " + ownerName + ":");
         for (Hotel hotel: hotels) {
             if (hotel.ownerName.equals(ownerName)) {
                 System.out.println(hotel.toString());
