@@ -42,7 +42,11 @@ public class Main {
         for (Hotel hotel: hotels) {
             if (hotel.ownerName.equals(ownerName)) {
                 System.out.println(hotel.toString());
+            }else {
+                System.out.println("There is no owner of this hotel!");
+                return;
             }
         }
+
     }
 }
