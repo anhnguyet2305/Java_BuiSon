@@ -31,7 +31,6 @@ public class Main {
         }
 
 
-
         System.out.println("Please enter the owner name of the hotel : ");
         String ownerName = scanner.next();
         searchOwnerName(ownerName);
